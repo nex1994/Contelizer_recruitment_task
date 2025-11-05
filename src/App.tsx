@@ -8,10 +8,10 @@ export const App = () => {
   return (
     <Routes>
       <Route path="/">
-        <Route index element={<Navigate to={"shuffler"} />} />
-        <Route path="/shuffler" element={<TextShuffler />} />
-        <Route path="/pesel-validator" element={<PeselValidator />}/>
-        <Route path="/user-manager" element={<UserManager />}/>
+        <Route index element={<Navigate to={"szyfrak"} />} />
+        <Route path="/szyfrak" element={<TextShuffler />} />
+        <Route path="/walidator-pesel" element={<PeselValidator />}/>
+        <Route path="/lista-urzytkownikow" element={<UserManager />}/>
       </Route>
     </Routes>
   );

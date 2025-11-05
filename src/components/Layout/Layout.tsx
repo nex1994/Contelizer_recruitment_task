@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
-import { NavLink } from "react-router"
+import { Link, NavLink } from "react-router"
 import styles from './Layout.module.scss';
 
 type Props = {
@@ -10,15 +10,20 @@ export const Layout = ({ children }: Props) => {
   return (
     <div className={styles.page}>
       <nav className={styles.page__nav}>
-        <NavLink className={styles.page__link} to={"/shuffler"}>
-          Text Shuffler
-        </NavLink>
-        <NavLink className={styles.page__link} to={"/pesel-validator"}>
-          Pesel Validator
-        </NavLink>
-        <NavLink className={styles.page__link} to={"/user-manager"}>
-          User manager
-        </NavLink>
+        <Link to={"/"}>
+          <img src="/logo.png" />
+        </Link>
+        <div className={styles.page__buttons}>
+          <NavLink className={styles.page__link} to={"/szyfrak"}>
+            Szyfrak
+          </NavLink>
+          <NavLink className={styles.page__link} to={"/walidator-pesel"}>
+            Walidator PESEL
+          </NavLink>
+          <NavLink className={styles.page__link} to={"/lista-urzytkownikow"}>
+            Lista urzytkowników
+          </NavLink>
+        </div>
       </nav>
       {children}
     </div>

@@ -1,0 +1,38 @@
+@use '../../styles/utils/vars';
+
+.page {
+  box-sizing: border-box;
+  // display: flex;
+  justify-content: space-evenly;
+  padding: 32px;
+  min-width: 80%;
+  border-bottom: 1px solid vars.$c-gray-30;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__label {
+
+  }
+
+  &__input {
+    justify-self: center;
+  }
+
+  &__text {
+    display: flex;
+    min-height: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+}
