@@ -2,7 +2,6 @@
 
 .page {
   box-sizing: border-box;
-  // display: flex;
   justify-content: space-evenly;
   padding: 32px;
   min-width: 80%;
@@ -21,16 +20,13 @@
     justify-content: space-evenly;
   }
 
-  &__label {
-
-  }
-
   &__input {
     justify-self: center;
   }
 
   &__text {
     display: flex;
+    max-width: 40%;
     min-height: 100px;
     justify-content: center;
     align-items: center;

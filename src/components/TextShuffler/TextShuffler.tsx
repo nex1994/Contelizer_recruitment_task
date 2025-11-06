@@ -54,7 +54,9 @@ export const TextShuffler = () => {
         <h1>Szyfrak</h1>
         <div className={styles.page__container}>
           <div className={styles.page__item}>
-            <label className={styles.page__label} htmlFor="text">Dodaj plik tekstowy (.txt)</label>
+            <label className={styles.page__label} htmlFor="text">
+              Dodaj plik tekstowy (.txt)
+            </label>
             <input
               className={styles.page__input}
               id="text"
@@ -64,7 +66,7 @@ export const TextShuffler = () => {
               onChange={handleFileChange}
             />
           </div>
-          <pre className={styles.page__text}>{output}</pre>
+          <textarea readOnly cols={60} value={output} rows={20} className={styles.page__text}>{output}</textarea>
         </div>
       </main>
     </Layout>
