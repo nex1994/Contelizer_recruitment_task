@@ -10,8 +10,9 @@ type Params = {
 };
 
 export const SingleUser = ({ name, id, email, gender, status }: Params) => {
-  const [newName, setNewName] = useState<string>('');
+  const [newName, setNewName] = useState<string>(name);
   const [beingEdited, setBeingEdited] = useState<boolean>(false);
+  
 
   const handleEdit = () => {
     setBeingEdited(true);
@@ -25,14 +26,16 @@ export const SingleUser = ({ name, id, email, gender, status }: Params) => {
       return;
     }
 
-    patchUser(id, {id, name: newName, email, gender, status}).then(() => setBeingEdited(false))
+    patchUser(id, {id, name: newName, email, gender, status})
+      .then(() => setBeingEdited(false))
+    
   }
 
   return (
     <>
       {!beingEdited ? (
         <li onDoubleClick={handleEdit}>
-          {name}
+          {newName}
         </li>
       ) : (
         <form onSubmit={handleEditsubmit}>
