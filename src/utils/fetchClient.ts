@@ -1,4 +1,10 @@
+import type { User } from "./types/user";
+
+const token = import.meta.env.VITE_API_TOKEN; 
+
 export const BASE_URL = 'http://gorest.co.in/public/v2/users'
+
+
 
 function wait(delay: number) {
   return new Promise(resolve => {
@@ -19,7 +25,9 @@ function request<T>(
     options.body = JSON.stringify(data);
     options.headers = {
       'Content-Type': 'application/json; charset=UTF-8',
+      Authorization: `Bearer ${token}`,
     };
+    
   }
 
   return wait(100)
@@ -35,5 +43,5 @@ function request<T>(
 
 export const client = {
   get: <T>(url: string) => request<T>(url),
-  patch: <T>(url: string, data: unknown) => request<T>(url, 'PATCH', data),
+  patch: <T>(url: string, data: User) => request<T>(url, 'PATCH', data),
 };

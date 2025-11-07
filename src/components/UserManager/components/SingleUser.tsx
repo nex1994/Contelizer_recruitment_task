@@ -31,11 +31,11 @@ export const SingleUser = ({ name, id, email, gender, status }: Params) => {
   return (
     <>
       {!beingEdited ? (
-        <li key={id} onDoubleClick={handleEdit}>
+        <li onDoubleClick={handleEdit}>
           {name}
         </li>
       ) : (
-        <form key={id} onSubmit={handleEditsubmit}>
+        <form onSubmit={handleEditsubmit}>
           <input
             type="text"
             onKeyUp={(event) => event.key === "Escape" && setBeingEdited(false)}

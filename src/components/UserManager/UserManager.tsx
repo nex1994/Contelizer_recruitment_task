@@ -47,6 +47,7 @@ export const UserManager = () => {
             {status === 'resolved' && filteredUsers.map(user => {
               return (
                 <SingleUser 
+                  key={user.id}
                   id={user.id} 
                   name={user.name}
                   email={user.email}
