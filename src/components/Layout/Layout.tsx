@@ -11,7 +11,7 @@ export const Layout = ({ children }: Props) => {
     <div className={styles.page}>
       <nav className={styles.page__nav}>
         <Link to={"/"}>
-          <img src="/logo.png" />
+          <img src="./logo.png" />
         </Link>
         <div className={styles.page__buttons}>
           <NavLink className={styles.page__link} to={"/szyfrak"}>

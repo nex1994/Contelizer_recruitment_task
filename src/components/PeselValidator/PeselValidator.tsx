@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Layout } from "../Layout"
-// import styles from './PeselValidator.module.scss';
+import styles from './PeselValidator.module.scss';
 
 const CHECK_WEIGHTS = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3];
 
@@ -58,8 +58,8 @@ export const PeselValidator = () => {
 
   return (
     <Layout>
-      <main>
-        <h1>Walidator numeru PESEL</h1>
+      <main className={styles.page}>
+        <h1 className={styles.page__header}>Walidator numeru PESEL</h1>
         <div>
           <input
             placeholder="Wprowadź numer PESEL"
