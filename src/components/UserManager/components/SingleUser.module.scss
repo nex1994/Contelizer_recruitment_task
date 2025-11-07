@@ -14,7 +14,18 @@
     background-color: vars.$c-white;
     border: 1px solid vars.$c-gray-40;
     border-radius: 15px;
-    justify-content: flex-end;
+    justify-content: space-between;
+    width: 300px;
+  }
+
+  &__label {
+    
+    border: 1px solid vars.$c-gray-50;
+    border-radius: 15px;
+  }
+
+  &__input {
+    border-style: none;
   }
 
   &__list {
@@ -22,6 +33,7 @@
     flex-direction: column;
     gap: 8px;
     padding: 16px;
+    text-align: left;
     
   }
 
@@ -32,6 +44,5 @@
     cursor: pointer;
     background-color: vars.$c-light-teal-10;
     color: vars.$c-light-teal-10;
-    // padding-right: ;
   }
 }

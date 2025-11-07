@@ -48,14 +48,21 @@ export const SingleUser = ({ name, id, email, gender, status }: Params) => {
         </div>
       ) : (
         <form onSubmit={handleEditsubmit}>
-          <input
-            type="text"
-            onKeyUp={(event) => event.key === "Escape" && setBeingEdited(false)}
-            onChange={(event) => setNewName(event.target.value)}
-            value={newName}
-            autoFocus
-            onBlur={handleEditsubmit}
-          />
+          <label className={styles.page__label} htmlFor="input">
+            <input
+              className={styles.page__input}
+              id="input"
+              name="input"
+              type="text"
+              onKeyUp={(event) =>
+                event.key === "Escape" && setBeingEdited(false)
+              }
+              onChange={(event) => setNewName(event.target.value)}
+              value={newName}
+              autoFocus
+              onBlur={handleEditsubmit}
+            />
+          </label>
         </form>
       )}
     </div>
