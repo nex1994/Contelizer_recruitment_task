@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Layout } from "../Layout"
-import styles from './PeselValidator.module.scss';
+// import styles from './PeselValidator.module.scss';
 
 const CHECK_WEIGHTS = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3];
 
