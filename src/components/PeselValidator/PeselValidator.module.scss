@@ -1,6 +1,49 @@
-// .page {
+@use '../../styles/utils/vars';
 
-//   &__header {
+.page {
+  font-family: Verdana, Geneva, Tahoma ;
+  justify-items: center;
+  width: 80%;
+  color: vars.$c-teal-dark-100;
+  background-color: vars.$c-light-teal-10;
+  width: 80%;
+  height: 100%;
 
-//   }
-// }
+  &__header {
+    margin: 0;
+    padding: 32px;
+  }
+
+  &__input {
+    border-style: none;
+  }
+
+  &__label {
+    box-sizing: border-box;
+    border: 1px solid vars.$c-gray-100;
+    padding: 16px;
+    border-radius: 15px;
+    background-color: vars.$c-white;
+  }
+
+  &__message {
+    font-size: 20px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  &__item {
+    min-width: 50%;
+    height: 200px;
+    border-top: 1px solid vars.$c-gray-30;
+    border-bottom: 1px solid vars.$c-gray-30;
+    border-radius: 15px;
+    justify-items: center;
+    align-content: center;
+    background-color: vars.$c-white;
+  }
+}

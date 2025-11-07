@@ -1,1 +1,31 @@
 @use '../../styles/utils/vars';
+
+.page { 
+  color: vars.$c-teal-dark-100;
+  background-color: vars.$c-light-teal-10;
+  width: 80%;
+  height: 100%;
+
+  &__input {
+    border-style: none;
+  }
+
+  &__header {
+    margin: 0;
+    padding: 32px
+  }
+
+  &__label {
+    box-sizing: border-box;
+    border: 1px solid vars.$c-gray-100;
+    padding: 16px;
+    border-radius: 15px;
+    background-color: vars.$c-white;
+  }
+
+  &__list {
+    padding: 32px;
+    list-style: none;
+    font-size: 24px;
+  }
+}

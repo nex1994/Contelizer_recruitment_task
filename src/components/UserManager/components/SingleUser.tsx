@@ -1,5 +1,6 @@
 import { useState, type FormEventHandler } from "react";
 import { patchUser } from "../../../api/users";
+import styles from './SingleUser.module.scss';
 
 type Params = {
   name: string;
@@ -32,11 +33,19 @@ export const SingleUser = ({ name, id, email, gender, status }: Params) => {
   }
 
   return (
-    <>
+    <div className={styles.page}>
       {!beingEdited ? (
-        <li onDoubleClick={handleEdit}>
-          {newName}
-        </li>
+        <div className={styles.page__container}>
+          <li className={styles.page__list} onDoubleClick={handleEdit}>
+            {newName}
+          </li>
+          <img
+            onClick={() => setBeingEdited(true)}
+            className={styles.page__image}
+            src="./edit.png"
+            alt="edit-image"
+          />
+        </div>
       ) : (
         <form onSubmit={handleEditsubmit}>
           <input
@@ -47,9 +56,8 @@ export const SingleUser = ({ name, id, email, gender, status }: Params) => {
             autoFocus
             onBlur={handleEditsubmit}
           />
-          
         </form>
       )}
-    </>
+    </div>
   );
 }

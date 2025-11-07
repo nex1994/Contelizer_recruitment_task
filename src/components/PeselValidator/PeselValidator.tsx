@@ -60,22 +60,45 @@ export const PeselValidator = () => {
     <Layout>
       <main className={styles.page}>
         <h1 className={styles.page__header}>Walidator numeru PESEL</h1>
-        <div>
-          <input
-            placeholder="Wprowadź numer PESEL"
-            value={input}
-            type="text"
-            maxLength={11}
-            onChange={(e) => setInput(e.target.value.trim())}
-          />
-          {error === "noError" && <p>Numer PESEL jest poprawny</p>}
-          {error === "tooShort" && <p>Numer PESEL jest za krótki</p>}
-          {error === "notDigit" && <p>Numer PESEL składa się tylko z cyfr</p>}
-          {error === "incorectControlDigit" && (
-            <p>
-               Cyfra kontrolna numeru PESEL jest nie prawidłowa.
-            </p>
-          )}
+        <div className={styles.page__container}>
+          <div className={styles.page__item}>
+            <h2>Sprawdź swój PESEL!</h2>
+            <span>
+              To proste narzędzie pozwala w kilka sekund zweryfikować, czy Twój
+              numer PESEL jest poprawny. Wpisz 11 cyfr i zweryfikuj PESEL.
+            </span>
+          </div>
+          <div className={styles.page__item}>
+            <label className={styles.page__label} htmlFor="pesel">
+              <input
+                id="pesel"
+                name="pesel"
+                autoFocus
+                className={styles.page__input}
+                placeholder="Wprowadź numer PESEL"
+                value={input}
+                type="text"
+                maxLength={11}
+                onChange={(e) => setInput(e.target.value.trim())}
+              />
+            </label>
+            {error === "noError" && (
+              <p className={styles.page__message}>Numer PESEL jest poprawny</p>
+            )}
+            {error === "tooShort" && (
+              <p className={styles.page__message}>Numer PESEL jest za krótki</p>
+            )}
+            {error === "notDigit" && (
+              <p className={styles.page__message}>
+                Numer PESEL składa się tylko z cyfr
+              </p>
+            )}
+            {error === "incorectControlDigit" && (
+              <p className={styles.page__message}>
+                Cyfra kontrolna numeru PESEL jest nie prawidłowa.
+              </p>
+            )}
+          </div>
         </div>
       </main>
     </Layout>

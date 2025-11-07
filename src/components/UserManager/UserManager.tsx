@@ -3,6 +3,7 @@ import { Layout } from "../Layout"
 import { getUsers } from "../../api/users"
 import type { Status, User } from "../../utils/types/user"
 import { SingleUser } from "./components/SingleUser"
+import styles from './UserManager.module.scss';
 
 export const UserManager = () => {
   const [users, setUsers] = useState<User[]>([])
@@ -35,29 +36,36 @@ export const UserManager = () => {
 
   return (
     <Layout>
-      <main>
-        <h1>Lista Użytkowników</h1>
-          <input 
-            type="text" 
+      <main className={styles.page}>
+        <h1 className={styles.page__header}>Lista Użytkowników</h1>
+        <label className={styles.page__label} htmlFor="query">
+          <input
+            autoFocus
+            className={styles.page__input}
+            id="query"
+            name="query"
+            type="text"
             placeholder="Wyszukaj użytkownika"
             value={query}
             onChange={(event) => setQuery(event.target.value.trimStart())}
-             />
-          <ul>
-            {status === 'resolved' && filteredUsers.map(user => {
+          />
+        </label>
+        <ul className={styles.page__list}>
+          {status === "resolved" &&
+            filteredUsers.map((user) => {
               return (
-                <SingleUser 
+                <SingleUser
                   key={user.id}
-                  id={user.id} 
+                  id={user.id}
                   name={user.name}
                   email={user.email}
                   gender={user.gender}
                   status={user.status}
-                   />
-              )
+                />
+              );
             })}
-          </ul>
+        </ul>
       </main>
     </Layout>
-  )
+  );
 }

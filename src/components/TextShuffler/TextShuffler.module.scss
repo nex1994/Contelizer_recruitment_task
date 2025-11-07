@@ -6,6 +6,9 @@
   padding: 32px;
   min-width: 80%;
   border-bottom: 1px solid vars.$c-gray-30;
+  color: vars.$c-teal-dark-100;
+  background-color: vars.$c-light-teal-10;
+    height: 100%;
 
   &__item {
     display: flex;
@@ -30,5 +33,6 @@
     min-height: 100px;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
   }
 }
