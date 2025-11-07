@@ -2,7 +2,7 @@ import type { User } from "./types/user";
 
 const token = import.meta.env.VITE_API_TOKEN; 
 
-export const BASE_URL = 'http://gorest.co.in/public/v2/users'
+export const BASE_URL = 'https://gorest.co.in/public/v2/users'
 
 
 

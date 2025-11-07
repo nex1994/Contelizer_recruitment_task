@@ -25,7 +25,7 @@ export const SingleUser = ({ name, id, email, gender, status }: Params) => {
       return;
     }
 
-    patchUser(id, {id, name: newName, email, gender, status})
+    patchUser(id, {id, name: newName, email, gender, status}).then(() => setBeingEdited(false))
   }
 
   return (
@@ -44,6 +44,7 @@ export const SingleUser = ({ name, id, email, gender, status }: Params) => {
             autoFocus
             onBlur={handleEditsubmit}
           />
+          
         </form>
       )}
     </>
